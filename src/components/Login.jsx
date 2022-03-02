@@ -26,8 +26,8 @@ function Login() {
       })
         .then((res) => res.json())
         .then(({ token }) => {
-          let lt = JSON.parse(localStorage.getItem("Token"))  
-          handelToken(lt);
+          let Token = localStorage.setItem("Token" ,JSON.stringify(token))
+          handelToken(Token);
           navigate(-1);
         });
     } catch (e) {

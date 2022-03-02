@@ -5,10 +5,10 @@ export const AuthContext = createContext();
 export const AuthContextProvider = ({ children }) => {
   const [token, setToken] = useState("");
 
+  let lt = JSON.parse(localStorage.getItem("Token"))  
+  // console.log('lt:', lt)
   const handelToken = (token) => {
-    setToken(token);
-    localStorage.setItem("Token" ,JSON.stringify(token))
-
+      setToken(lt);
   };
 
   return (
